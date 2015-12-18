@@ -28,7 +28,7 @@
 他会一直都在左上角偏移，而不是自己之前定义好的位置。解决办法有可以先的这些
 
 1. 子元素宽高100%，需要活动的元素写在这个子元素里面定位好,类似于
-    ```
+``` javasctipt
     <div id="scene">
         <div class=" layer" data-depth="0.4"><img src="" alt=""></div> //必须带layer，要不然会跪
         <div class=" layer" data-depth="0.6"><img src="" alt=""></div>
@@ -37,19 +37,19 @@
         <div class=" layer" data-depth="0.3"><img src="" alt=""></div>
         <div class=" layer" data-depth="0.4"><img src="" alt=""></div>
     </div>
-    ```
+```
 2. 去改插件，这个也是去快捷的办法  
     在jq版本的插件中，有下面这样的代码
-    ``` javascript
+``` javascript
         this.$layers.css({
             position:'absolute',
             display:'block',
             left: 0,
             top: 0
         });
-    ```
+```
     改成这样的就可以  
-    ```
+```
     this.$layers.each(function(index, el) {
         $(el).css({
             position: "absolute",
@@ -58,15 +58,15 @@
             top: $(el).position().top
         })
     })
-    ```
+```
     这样是为了让他们能够自己读取自己的正确的绝对位置去偏移，而不是按照0,0的位置
     
     如果是原生版本里面的话有
     
-    ```
+```
     layer.style.left = 0;
       layer.style.top = 0;
-    ```
+```
     只需要自己写一个方法找到自己距离上一个定位元素的位置，这里不再叙述了。
     
 ### 写在后话
