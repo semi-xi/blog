@@ -26,9 +26,9 @@
 当元素生成之后，在高版本浏览器当中他是通过对translate的值不同改变偏移值的，是以自己本身的位置为起始点  
 但是插件本身的默认设置是left=0，top=0，对于子元素本身不是宽高为100%的情况就会出现一个比较大的问题是  
 他会一直都在左上角偏移，而不是自己之前定义好的位置。解决办法有可以先的这些
-1.  子元素宽高100%，需要活动的元素写在这个子元素里面定位好,类似于
- 
-    ```javascript
+
+1. 子元素宽高100%，需要活动的元素写在这个子元素里面定位好,类似于
+    ```
     <div id="scene">
         <div class=" layer" data-depth="0.4"><img src="" alt=""></div> //必须带layer，要不然会跪
         <div class=" layer" data-depth="0.6"><img src="" alt=""></div>
@@ -38,17 +38,15 @@
         <div class=" layer" data-depth="0.4"><img src="" alt=""></div>
     </div>
     ```
-
-
- 2. 去改插件，这个也是去快捷的办法  
+2. 去改插件，这个也是去快捷的办法  
     在jq版本的插件中，有下面这样的代码
     ``` javascript
-    this.$layers.css({
-      position:'absolute',
-      display:'block',
-      left: 0,
-      top: 0
-    });
+        this.$layers.css({
+            position:'absolute',
+            display:'block',
+            left: 0,
+            top: 0
+        });
     ```
     改成这样的就可以  
     ```
