@@ -28,18 +28,18 @@
 他会一直都在左上角偏移，而不是自己之前定义好的位置。解决办法有可以先的这些
 
 1. 子元素宽高100%，需要活动的元素写在这个子元素里面定位好,类似于
-``` javasctipt
-    <div id="scene">
-        <div class=" layer" data-depth="0.4"><img src="" alt=""></div> //必须带layer，要不然会跪
-        <div class=" layer" data-depth="0.6"><img src="" alt=""></div>
-        <div class=" layer" data-depth="0.8"><img src="" alt=""></div>
-        <div class=" layer" data-depth="0.7"><img src="" alt=""></div>
-        <div class=" layer" data-depth="0.3"><img src="" alt=""></div>
-        <div class=" layer" data-depth="0.4"><img src="" alt=""></div>
-    </div>
-```
-2. 去改插件，这个也是去快捷的办法  
-    在jq版本的插件中，有下面这样的代码
+
+    ``` javasctipt
+        <div id="scene">
+            <div class=" layer" data-depth="0.4"><img src="" alt=""></div> //必须带layer，要不然会跪
+            <div class=" layer" data-depth="0.6"><img src="" alt=""></div>
+            <div class=" layer" data-depth="0.8"><img src="" alt=""></div>
+            <div class=" layer" data-depth="0.7"><img src="" alt=""></div>
+            <div class=" layer" data-depth="0.3"><img src="" alt=""></div>
+            <div class=" layer" data-depth="0.4"><img src="" alt=""></div>
+        </div>
+    ```
+2. 去改插件，这个也是去快捷的办法在jq版本的插件中，有下面这样的代码
 
 ``` javascript
         this.$layers.css({
@@ -72,7 +72,7 @@
       layer.style.top = 0;
 ```
 
-    只需要自己写一个方法找到自己距离上一个定位元素的位置，这里不再叙述了。
+只需要自己写一个方法找到自己距离上一个定位元素的位置，这里不再叙述了。
     
 ### 写在后话
 暂时的坑就3个，后面有的话会补充
