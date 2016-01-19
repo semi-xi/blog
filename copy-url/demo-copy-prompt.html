@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>copy demo</title>
+</head>
+<body>
+    <input type="text" value="the copy url" id="text">
+    <button id="btn">复制网址</button>
+</body>
+<script>
+     var oT=document.getElementById('text');
+    var oBtn=document.getElementById('btn');
+    
+       
+        oBtn.onclick=function(){
+           var name=window.prompt('the value you input is',oT.value);
+            console.log(name)
+        }
+    
+</script>
+</html>
