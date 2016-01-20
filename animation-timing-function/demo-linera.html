@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div class="color"></div>
+</body>
+<style>
+    .color{
+        width: 200px;
+        height: 200px;
+        animation-name:changeColor;
+        animation-duration: 3s;
+        animation-fill-mode: forwards;
+        animation-timing-function: ease-in-out;
+        background-color: black;
+    }
+    @-webkit-keyframes changeColor{
+        0%{
+            background-color:black;
+        }
+       50%{
+            background-color: red;
+        }
+        100%{
+            background-color: yellow;
+        }
+    }
+</style>
+</html>
