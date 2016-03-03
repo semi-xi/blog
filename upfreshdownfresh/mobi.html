@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+	<title>Document</title>
+	<script type="text/javascript" src="http://assets.dwstatic.com/mobile/src/js/main/seajs/sea-lego.js"></script>
+	<style type="text/css">
+	*{
+		margin: 0;padding: 0;
+	}
+	html,body{
+		/*height: 200%;*/
+		
+	}
+	p{
+		color:#000;
+		text-align: center;
+		line-height: 40px;
+		/*height: 0px;*/
+		/*overflow: hidden;*/
+	}
+	#downfresh{
+		background-color: #ccc;
+		position: absolute;
+		left:0px;
+		top:0px;
+		width: 100%;
+		height: 0;
+		overflow: hidden;
+	}
+	#upfresh{
+		background-color: #ccc;
+		position: absolute;
+		left:0px;
+		bottom:0px;
+		width: 100%;
+		height: 0;
+		overflow: hidden;
+	}
+	#wrapper{
+		position: absolute;
+		left:0px;
+		top:0px;
+		bottom:0px;
+		right: 0px;
+	}
+	</style>
+</head>
+<body >
+	<div id="wrapper">
+		<div id="scroller">
+			<p id="">阿斯顿爱上大叔打是</p>
+			<p id="">阿斯顿爱上大叔打是</p>
+			<p id="">阿斯顿爱上大叔打是</p>
+			<p id="">阿斯顿爱上大叔打是</p>
+			<p id="">阿斯顿爱上大叔打是</p>
+			<p id="">阿斯顿爱上大叔打是</p>
+			<p id="">阿斯顿爱上大叔打是</p>
+			<p id="">阿斯顿爱上大叔打是</p>
+			<p id="">阿斯顿爱上大叔打是</p>
+			<p id="">阿斯顿爱上大叔打是</p>
+			<p id="">阿斯顿爱上大叔打是</p>
+			<p id="">阿斯顿爱上大叔打是</p>
+			<p id="">阿斯顿爱上大叔打是</p>
+			<p id="">阿斯顿爱上大叔打是</p>
+			<p id="">阿斯顿爱上大叔打是</p>
+			<p id="">阿斯顿爱上大叔打是</p>
+			<p id="">阿斯顿爱上大叔打是</p>
+			<p id="">阿斯顿爱上大叔打是</p>
+			<p id="">阿斯顿爱上大叔打是</p>
+			<p id="">阿斯顿爱上大叔打是</p>
+			<p id="">阿斯顿爱上大叔打是</p>
+			<p id="">阿斯顿爱上大叔打是</p>
+			<p id="">阿斯顿爱上大叔打是</p>
+			<p id="">阿斯顿爱上大叔打是</p>
+			<p id="">阿斯顿爱上大叔打是</p>
+			<p id="">阿斯顿爱上大叔打是</p>
+			<p id="">阿斯顿爱上大叔打是</p>
+			<p id="">阿斯顿爱上大叔打是</p>
+			<p id="">阿斯顿爱上大叔打是</p>
+			<p id="">阿斯顿爱上大叔打是</p>
+			<p id="">阿斯顿爱上大叔打是</p>
+			<p id="">阿斯顿爱上大叔打是</p>
+			<p id="">阿斯顿爱上大叔打是</p>
+			<p id="">阿斯顿爱上大叔打是</p>
+			<p id="">阿斯顿爱上大叔打是</p>
+			<p id="">阿斯顿爱上大叔打是</p>
+			<p id="">阿斯顿爱上大叔打是</p>
+			<p id="">阿斯顿爱上大叔打是</p>
+			<p id="">阿斯顿爱上大叔打是</p>
+			<p id="">阿斯顿爱上大叔打是</p>
+			<p id="">阿斯顿爱上大叔打是</p>
+			<p id="">阿斯顿爱上大叔打是</p>
+			<p id="">阿斯顿爱上大叔打是</p>
+			<p id="">阿斯顿爱上大叔打是</p>
+			<p id="">阿斯顿爱上大叔打是</p>
+			<p id="">阿斯顿爱上大叔打是</p>
+			<p id="">阿斯顿爱上大叔打是</p>
+			<p id="">阿斯顿爱上大叔打是</p>
+			<p id="">阿斯顿爱上大叔打是</p>
+			<p id="">阿斯顿爱上大叔打是</p>
+			<p id="">阿斯顿爱上大叔打是</p>
+			<p id="">阿斯顿爱上大叔打是</p>
+		</div>
+
+		<p id="downfresh">下拉刷新</p>
+		<p id="upfresh">上拉刷新</p>
+	</div>
+</body>
+<script type="text/javascript">
+	
+	seajs.use(['zepto','touch','http://assets.dwstatic.com/mobile/src/js/module/iscroll/iscroll-probe'],function ($,Iscroll) {
+		document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+		function updatePosition () {
+			document.title = this.y>>0;
+			// 下拉刷新的操作
+			if(this.y >= 0){
+				$('#downfresh').height(this.y);
+				if(this.y > 100){
+					$('#downfresh').html('松开刷新');
+				}
+			}
+			//上拉刷新的操作
+			var maxY=Math.abs(this.maxScrollY); //最大上拉距离
+			console.log(maxY)
+			if(Math.abs(this.y) >= maxY){
+				$('#upfresh').height(Math.abs(this.y)-maxY);
+				if((Math.abs(this.y)-maxY)> 100){
+					$('#upfresh').html('松开刷新');
+				}
+			}
+			if(this.y >= this.maxScrollY && this.y < 0){
+				$('#downfresh').html('下拉刷新');
+				$('#downfresh').css('height',0);
+				$('#upfresh').html('上拉刷新');
+				$('#upfresh').css('height',0);
+			}
+		}
+		function backPos() {
+			if(this.y==0){
+				$('#downfresh').html('下拉刷新');
+				$('#downfresh').css('height',0)
+			}
+			if(this.y==this.maxScrollY){
+				$('#upfresh').html('上拉刷新');
+				$('#upfresh').css('height',0)
+			}
+		}
+		function loaded () {
+			myScroll = new IScroll('#wrapper', 
+				{ bounceEasing: 'quadratic',
+				 bounceTime: 500,
+				 probeType: 3
+				  }
+				);
+			myScroll.on('scroll', updatePosition);
+			myScroll.on('scrollEnd', backPos);
+		}
+		loaded();
+	})
+</script>
+</html>
