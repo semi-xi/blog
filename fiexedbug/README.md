@@ -1,10 +1,10 @@
 # 微信页面多fixedDOM出现的bug以及解决方案
 
 微信的浏览器  
-![](https://github.com/semi-xi/blog/raw/master/fixed/src/img/wrong.png)  
+![](https://github.com/semi-xi/blog/raw/master/fixedbug/src/img/wrong.png)  
 
 正常浏览器的  
-![](https://github.com/semi-xi/blog/raw/master/fixed/src/img/right.jpg)  
+![](https://github.com/semi-xi/blog/raw/master/fixedbug/src/img/right.jpg)  
 在微信中，如果页面中出现2个以上的fixed元素，则会导致一个bug
 
 bug表现在 这个fixed层必定是最高层或者最底层  详细可以看下src里面的demo1
@@ -26,7 +26,7 @@ bug表现在 这个fixed层必定是最高层或者最底层  详细可以看下
 PS：
 又又又出现了一个新的状况，如果你看了我的demo就知道`div4`比`div3`的DOM的层级高的，当在结构上`div4`在`div3`的前面会出现问题，但是，如果`div3`比`div4`前面，就是层级高的先写，那样神奇的事情来了：
 
-![](https://github.com/semi-xi/blog/raw/master/fixed/src/img/other.png)
+![](https://github.com/semi-xi/blog/raw/master/fixedbug/src/img/other.png)
 
 我再也无法直视微信的fixed
 
