@@ -4,7 +4,7 @@
 ![](https://github.com/semi-xi/blog/raw/master/fixedbug/src/img/wrong.png)  
 
 正常浏览器的  
-![](https://github.com/semi-xi/blog/raw/master/fixedbug/src/img/right.jpg)  
+![](https://github.com/semi-xi/blog/raw/master/fixedbug/src/img/right.png)  
 在微信中，如果页面中出现2个以上的fixed元素，则会导致一个bug
 
 bug表现在 这个fixed层必定是最高层或者最底层  详细可以看下src里面的demo1
