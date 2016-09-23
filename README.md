@@ -6,5 +6,6 @@
 1. [japarallax需要注意的地方](https://github.com/semi-xi/blog/tree/master/japarallax)
 1. [复制地址](https://github.com/semi-xi/blog/tree/master/copy-url)
 1. [animation-timing-function](https://github.com/semi-xi/blog/tree/master/animation-timing-function)
-1.[jq isEmptyObject问题](https://github.com/semi-xi/blog/issues/5)
-1.[flash的一些问题] (https://github.com/semi-xi/blog/issues/6)
+1. [jq isEmptyObject问题](https://github.com/semi-xi/blog/issues/5)
+1. [flash的一些问题] (https://github.com/semi-xi/blog/issues/6)
+1. [new Date在ie的bug](https://github.com/semi-xi/blog/tree/master/newDate)

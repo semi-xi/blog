@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="Keywords" content="">
+    <meta name="description" content="">
+    <title> index </title>
+    <link href="css/index.css" rel="stylesheet">
+</head>
+
+<body id="body">
+
+
+
+</body>
+<script type="text/javascript">
+    var oBody = document.getElementById('body');
+        var time = new Date(2016, 08, 01, 10, 20, 30);
+        var time2 = new Date('09 01, 2016 10:20');
+        var time3 = new Date(time.getTime())
+        var time4 = new Date('2016-09-01T10:20:30');
+        var time5 = new Date('2016-09-01 10:20:30');
+
+        console.log(time);
+        console.log(time2);
+        console.log(time3);
+        console.log(time4);
+        console.log(time4.toUTCString());
+        console.log(time5);
+        oBody.innerHTML = time + '<br>' + time2 + '<br>' + time3 + '<br>' + time4 + '<br>' + time4.toUTCString() + '<br>' + time5;
+</script>
+
+</html>

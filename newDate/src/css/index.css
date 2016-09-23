@@ -1,0 +1,1104 @@
+@charset "UTF-8";
+/*
+ * @file: 入口SASS
+ * @author:
+ * @update:
+ */
+/*
+ * @file: 基础设施
+ * @update: 2015-06-03 17:28:19
+ */
+/*
+ * @file: 全局变量配置
+ * @update: 2016-02-17 11:23:07
+ */
+/* 排版配置 */
+/*
+ * 字体策略
+ * 1. 默认：使用无衬线字体，OS X使用"PingFang sc, "Helvetica Neue", Helvetica； Windows使用Tahoma, Arial；
+ * 2. 黑体：通过字体辅助类.u-heiti 或者 @extend %u-heiti来调用；
+ * 3. 宋体：通过字体辅助类.u-songti 或者 @extend %u-songti来调用；
+ * 3. 楷体：通过字体辅助类.u-kaiti 或者 @extend %u-kaiti来调用；
+ * 4. 参考链接：http://www.zhihu.com/question/19911793   http://zenozeng.github.io/fonts.css/
+ */
+/* 颜色配置 */
+/**
+ * @name:      SASS常用Function与Mixins
+ * @update:    2015-01-09 16:18:05
+ * @copyright: MIT License
+*/
+/* ==========================================================================
+   SASS function
+   ========================================================================== */
+/*
+ * @name:  px转em
+ * @param: $px {string}  对齐类型
+ * @param: $base-font-size {dimension}  基准字号大小
+ */
+/*
+ * @name:  半透明颜色
+ * @param: $opacity {number}  透明度值
+ */
+/* ==========================================================================
+   SASS mixins
+   ========================================================================== */
+/*
+ * @name:    BEM模块
+ * @param:   $elementSeparator {string}  BE连接符
+ * @param:   $modifierSeparator {string}  M连接符
+ * @param:   $selector {string}  类名
+ * @thanks:  https://medium.com/@marcmintel/pushing-bem-to-the-next-level-with-sass-3-4-5239d2371321 by @Marcmintel(https://twitter.com/marcmintel)
+ * @expamle:
+    ============= user =============
+    @include b(block) {
+        background: red;
+        @include e(header){
+            font-size: 14px;
+            @include m(css) {
+                font-size: 18px;
+            }
+        };
+        @include m(book) {
+            color: blue;
+            @include e(kindlebook) {
+                background: gray;
+            }
+        }
+    }
+    ============= output =============
+    .block {
+        background: red;
+    }
+    .block__header {
+        font-size: 14px;
+    }
+    .block__header--css {
+        font-size: 18px;
+    }
+    .block--book {
+        color: blue;
+    }
+    .block--book .block__kindlebook {
+        background: gray;
+    }
+ */
+/* @name: 重置 */
+/*
+ * @name:  inline-block
+ * @param: $alignment {string}  对齐类型
+ * @param: $support-for-ie {boolean}  是否支持IE6
+ */
+/* @name: 闭合浮动 */
+/*
+ * @name:  浮动
+ * @param: $side {string}  浮动方向
+ * @param: $support-for-ie {boolean}  是否支持IE6
+ */
+/*
+ * @name:  文本隐藏 (text-indent: -9999px;有性能问题)
+ * @param: $support-for-ie {boolean}  是否支持IE6
+ */
+/*
+ * @name:  隐藏增加可访问性的文字，注意与hide-text的区别是，他隐藏整个元素
+ * @param: $support-for-ie {boolean}  是否支持IE6
+ */
+/*
+ * @name:  图片代替文字
+ * @param: $support-for-ie {boolean}  是否支持IE6
+ */
+/*
+ * @name:  文字溢出显示省略号
+ * @param: $width {dimension}  指定宽度 (需带单位)
+ */
+/*
+ * @name: 强制不换行
+ * @link: http://www.hicss.net/solve-change-line-in-css
+ */
+/* @name: 连续字符换行 */
+/* @name: 阻止长字符串（例如url或无意义连续英文字符）打破布局 */
+/*
+ * @name:  resizable
+ * @param: $direction {string}  缩放的方向 (horizontal || vertical || both)
+ * @link:  https://github.com/twbs/bootstrap-sass/blob/master/assets/stylesheets/bootstrap/mixins/_resize.scss
+ * @1:     Per CSS3 UI, `resize` only applies when `overflow` isn't `visible`
+ */
+/*
+ * @name:  最小高度
+ * @param: $height {dimension}  最小高度
+ */
+/*
+ * @name:  背景透明
+ * @param: $color {color}  颜色
+ * @param: $opacity {number}  透明度
+ * @param: $support-for-ie {boolean}  是否支持IE6
+ * @link:  https://github.com/airen/Sass_mixins_function/tree/master/mixins
+ */
+/*
+ * @name:  背景线性渐变
+ * @param: $startColor {number}  渐变始点颜色
+ * @param: $endColor {boolean}  渐变终点颜色
+ * @param: $direction {color}  渐变方向
+ */
+/*
+ * @name:  透明度
+ * @param: $opacity {number}  透明度
+ * @param: $support-for-ie {boolean}  是否支持IE6
+ */
+/* @name: 重置滤镜 */
+/*
+ * @name:  液态比例缩放
+ * @param: $large-size {dimension}  背景图片大尺寸
+ * @param: $small-size {dimension}  背景图片小尺寸
+ * @link:  http://voormedia.com/blog/2012/11/responsive-background-images-with-fixed-or-fluid-aspect-ratios
+ */
+/*
+ * @name:  border三角形
+ * @param: $base {dimension}  底边尺寸
+ * @param: $height {dimension}  高度
+ * @param: $color {color}  颜色
+ * @param: $direction {string}  方向 (top || bottom || left || right)
+ * @link:  http://codepen.io/zhouwenbin/pen/emZVZp
+ */
+/* ==========================================================================
+   媒体查询@Media Queries
+   ========================================================================== */
+/*
+ * @name:       媒体查询
+ * @thanks:     http://paranoida.com/　by @Rafal Bromirski (http://twitter.com/paranoida)
+ * @resolution: http://screensiz.es/tablet
+ * @link:       http://www.stephen.io/mediaqueries/
+ */
+/* ========= Screen ========= */
+/* ========= hdpi ========= */
+/* ========= iPhone5 ========= */
+/* ========= iPhone4 ========= */
+/* ========= iPhone3 ========= */
+/* ========= iPad All ========= */
+/* ========= iPad Mini ========= */
+/* ========= iPad Retina ========= */
+/* normalize.css v1.1.3 | MIT License | git.io/normalize */
+/* ==========================================================================
+   HTML5 display definitions
+   ========================================================================== */
+/**
+ * Correct `block` display not defined in IE 6/7/8/9 and Firefox 3.
+ */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+  display: block; }
+
+/**
+ * Correct `inline-block` display not defined in IE 6/7/8/9 and Firefox 3.
+ */
+audio,
+canvas,
+video {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1; }
+
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+audio:not([controls]) {
+  display: none;
+  height: 0; }
+
+/**
+ * Address styling not present in IE 7/8/9, Firefox 3, and Safari 4.
+ * Known issue: no IE 6 support.
+ */
+[hidden] {
+  display: none; }
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+/**
+ * 1. Correct text resizing oddly in IE 6/7 when body `font-size` is set using
+ *    `em` units.
+ * 2. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+html {
+  font-size: 100%;
+  /* 1 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */ }
+
+/**
+ * Address `font-family` inconsistency between `textarea` and other form
+ * elements.
+ */
+html,
+button,
+input,
+select,
+textarea {
+  font-family: sans-serif; }
+
+/**
+ * Address margins handled incorrectly in IE 6/7.
+ */
+body {
+  margin: 0; }
+
+/* ==========================================================================
+   Links
+   ========================================================================== */
+/**
+ * Address `outline` inconsistency between Chrome and other browsers.
+ */
+a:focus {
+  outline: thin dotted; }
+
+/**
+ * Improve readability when focused and also mouse hovered in all browsers.
+ */
+a:active,
+a:hover {
+  outline: 0 none; }
+
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+/**
+ * Address font sizes and margins set differently in IE 6/7.
+ * Address font sizes within `section` and `article` in Firefox 4+, Safari 5,
+ * and Chrome.
+ */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0; }
+
+h2 {
+  font-size: 1.5em;
+  margin: 0.83em 0; }
+
+h3 {
+  font-size: 1.17em;
+  margin: 1em 0; }
+
+h4 {
+  font-size: 1em;
+  margin: 1.33em 0; }
+
+h5 {
+  font-size: 0.83em;
+  margin: 1.67em 0; }
+
+h6 {
+  font-size: 0.67em;
+  margin: 2.33em 0; }
+
+/**
+ * Address styling not present in IE 7/8/9, Safari 5, and Chrome.
+ */
+abbr[title] {
+  border-bottom: 1px dotted; }
+
+/**
+ * Address style set to `bolder` in Firefox 3+, Safari 4/5, and Chrome.
+ */
+b,
+strong {
+  font-weight: bold; }
+
+blockquote {
+  margin: 1em 40px; }
+
+/**
+ * Address styling not present in Safari 5 and Chrome.
+ */
+dfn {
+  font-style: italic; }
+
+/**
+ * Address differences between Firefox and other browsers.
+ * Known issue: no IE 6/7 normalization.
+ */
+hr {
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  height: 0; }
+
+/**
+ * Address styling not present in IE 6/7/8/9.
+ */
+mark {
+  background: #ff0;
+  color: #000; }
+
+/**
+ * Address margins set differently in IE 6/7.
+ */
+p,
+pre {
+  margin: 1em 0; }
+
+/**
+ * Correct font family set oddly in IE 6, Safari 4/5, and Chrome.
+ */
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, serif;
+  _font-family: 'courier new', monospace;
+  font-size: 1em; }
+
+/**
+ * Improve readability of pre-formatted text in all browsers.
+ */
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word; }
+
+/**
+ * Address CSS quotes not supported in IE 6/7.
+ */
+q {
+  quotes: none; }
+
+/**
+ * Address `quotes` property not supported in Safari 4.
+ */
+q:before,
+q:after {
+  content: '';
+  content: none; }
+
+/**
+ * Address inconsistent and variable font size in all browsers.
+ */
+small {
+  font-size: 80%; }
+
+/**
+ * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+ */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+sup {
+  top: -0.5em; }
+
+sub {
+  bottom: -0.25em; }
+
+/* ==========================================================================
+   Lists
+   ========================================================================== */
+/**
+ * Address margins set differently in IE 6/7.
+ */
+dl,
+menu,
+ol,
+ul {
+  margin: 1em 0; }
+
+dd {
+  margin: 0 0 0 40px; }
+
+/**
+ * Address paddings set differently in IE 6/7.
+ */
+menu,
+ol,
+ul {
+  padding: 0 0 0 40px; }
+
+/**
+ * Correct list images handled incorrectly in IE 7.
+ */
+nav ul,
+nav ol {
+  list-style: none;
+  list-style-image: none; }
+
+/* ==========================================================================
+   Embedded content
+   ========================================================================== */
+/**
+ * 1. Remove border when inside `a` element in IE 6/7/8/9 and Firefox 3.
+ * 2. Improve image quality when scaled in IE 7.
+ */
+img {
+  border: 0;
+  /* 1 */
+  -ms-interpolation-mode: bicubic;
+  /* 2 */ }
+
+/**
+ * Correct overflow displayed oddly in IE 9.
+ */
+svg:not(:root) {
+  overflow: hidden; }
+
+/* ==========================================================================
+   Figures
+   ========================================================================== */
+/**
+ * Address margin not present in IE 6/7/8/9, Safari 5, and Opera 11.
+ */
+figure {
+  margin: 0; }
+
+/* ==========================================================================
+   Forms
+   ========================================================================== */
+/**
+ * Correct margin displayed oddly in IE 6/7.
+ */
+form {
+  margin: 0; }
+
+/**
+ * Define consistent border, margin, and padding.
+ */
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em; }
+
+/**
+ * 1. Correct color not being inherited in IE 6/7/8/9.
+ * 2. Correct text not wrapping in Firefox 3.
+ * 3. Correct alignment displayed oddly in IE 6/7.
+ */
+legend {
+  border: 0;
+  /* 1 */
+  padding: 0;
+  white-space: normal;
+  /* 2 */
+  *margin-left: -7px;
+  /* 3 */ }
+
+/**
+ * 1. Correct font size not being inherited in all browsers.
+ * 2. Address margins set differently in IE 6/7, Firefox 3+, Safari 5,
+ *    and Chrome.
+ * 3. Improve appearance and consistency in all browsers.
+ */
+button,
+input,
+select,
+textarea {
+  font-size: 100%;
+  /* 1 */
+  margin: 0;
+  /* 2 */
+  vertical-align: baseline;
+  /* 3 */
+  *vertical-align: middle;
+  /* 3 */ }
+
+/**
+ * Address Firefox 3+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+button,
+input {
+  line-height: normal; }
+
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Chrome, Safari 5+, and IE 6+.
+ * Correct `select` style inheritance in Firefox 4+ and Opera.
+ */
+button,
+select {
+  text-transform: none; }
+
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ * 4. Remove inner spacing in IE 7 without affecting normal text inputs.
+ *    Known issue: inner spacing remains in IE 6.
+ */
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+  cursor: pointer;
+  /* 3 */
+  *overflow: visible;
+  /* 4 */ }
+
+/**
+ * Re-set default cursor for disabled elements.
+ */
+button[disabled],
+html input[disabled] {
+  cursor: default; }
+
+/**
+ * 1. Address box sizing set to content-box in IE 8/9.
+ * 2. Remove excess padding in IE 8/9.
+ * 3. Remove excess padding in IE 7.
+ *    Known issue: excess padding remains in IE 6.
+ */
+input[type="checkbox"],
+input[type="radio"] {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+  *height: 13px;
+  /* 3 */
+  *width: 13px;
+  /* 3 */ }
+
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome
+ *    (include `-moz` to future-proof).
+ */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  /* 2 */
+  box-sizing: content-box; }
+
+/**
+ * Remove inner padding and search cancel button in Safari 5 and Chrome
+ * on OS X.
+ */
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+/**
+ * Remove inner padding and border in Firefox 3+.
+ */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0; }
+
+/**
+ * 1. Remove default vertical scrollbar in IE 6/7/8/9.
+ * 2. Improve readability and alignment in all browsers.
+ */
+textarea {
+  overflow: auto;
+  /* 1 */
+  vertical-align: top;
+  /* 2 */ }
+
+/* ==========================================================================
+   Tables
+   ========================================================================== */
+/**
+ * Remove most spacing between table cells.
+ */
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/*
+ * @file: 重置样式
+ * @update: 2016-02-03 15:29:04
+ */
+body {
+  font: 300 12px/1.5 "Helvetica Neue", Helvetica, Tahoma, Arial, "PingFang sc", sans-serif;
+  color: #333;
+  background-color: #fff;
+  overflow-y: auto; }
+
+a {
+  text-decoration: none;
+  color: #333; }
+  a:hover {
+    text-decoration: underline;
+    color: #fa0; }
+
+/* 去除现代浏览器图片底部的空隙 */
+img {
+  vertical-align: top; }
+
+em {
+  font-style: normal; }
+
+ol, ul, menu {
+  list-style: none outside none; }
+
+fieldset, iframe {
+  border: 0 none; }
+
+dl, dt, dd, ul, ol, li,
+h1, h2, h3, h4, h5, h6,
+pre, code, blockquote,
+form, fieldset, legend, input, button, textarea,
+th, td, hr, p,
+article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0; }
+
+/* IE6 7 8(q) bug 显示为行内表现 */
+iframe {
+  display: block; }
+
+/* IE bug fixed: th 不继承 text-align */
+th {
+  text-align: inherit; }
+
+/* 修正表单元素不继承父级字体族的问题 */
+input, button, select, textarea {
+  font-family: "Helvetica Neue", Helvetica, Tahoma, Arial, "PingFang sc", sans-serif; }
+
+/**
+ * 移除 IE6-11 中默认的垂直滚动条
+ * 禁止水平拖动，防止破坏布局
+ */
+textarea {
+  resize: vertical;
+  overflow: auto;
+  /* 1 */ }
+
+/**
+ * 修正 Firefox 19+ Placeholder 设置了opacity 的问题
+ */
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+  color: darkGray;
+  opacity: 1; }
+
+/* 一致的 del 样式 */
+del {
+  text-decoration: line-through; }
+
+abbr {
+  cursor: help; }
+
+/* pre允许溢出滚动 */
+pre {
+  overflow: auto; }
+
+/* 以下为排版样式 */
+hr {
+  height: 10px;
+  margin-bottom: .8em;
+  border: 0;
+  border-bottom: 1px solid #cfcfcf; }
+
+blockquote {
+  position: relative;
+  padding: 0 15px;
+  margin: 15px 0;
+  border-left: 4px solid #ddd;
+  color: #999; }
+
+/**
+ * @file: 通用辅助工具类
+ * @author: David
+ * @update: 2016-02-03 14:55:03
+ */
+/* ==========================================================================
+   基础工具@basis
+   ========================================================================== */
+/**
+ * 闭合浮动
+ */
+.u-clearfix {
+  *zoom: 1; }
+  .u-clearfix:before, .u-clearfix:after {
+    content: "";
+    display: table;
+    line-height: 0; }
+  .u-clearfix:after {
+    clear: both; }
+
+/* 浮动 */
+.u-left {
+  float: left;
+  _display: inline; }
+
+.u-right {
+  float: right;
+  _display: inline; }
+
+/* 隐藏 */
+.u-hide {
+  display: none; }
+
+/* ==========================================================================
+   字体排版@type
+   @字体策略参考：http://zenozeng.github.io/fonts.css/
+   ========================================================================== */
+/**
+ * 文字溢出显示省略号,需指定宽度
+ */
+.u-ellipsis {
+  display: block;
+  width: auto;
+  white-space: nowrap;
+  word-wrap: normal;
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  text-align: left; }
+
+/* 强制不换行 */
+.u-nowrap {
+  white-space: nowrap;
+  word-wrap: normal;
+  word-break: keep-all; }
+
+/* 连续字符换行 */
+.u-wrap {
+  -ms-word-break: break-all;
+  word-break: break-all;
+  word-break: break-word; }
+
+/**
+ * 禁用中文输入法
+ * @note: 仅 IE 5+，Firefox 3+ 支持
+ * @doc:  https://developer.mozilla.org/en-US/docs/Web/CSS/ime-mode
+ * 1. 默认关闭输入法，但用户还可以手动开启，Firefox Linux 版不支持。
+*/
+.u-imeInactive {
+  ime-mode: inactive !important;
+  /* 1 */ }
+
+/**
+ * OS X 字体平滑
+ * 1. Fiefox 25 开始支持「-moz-osx-font-smoothing:auto(默认)|grayscale」
+ */
+.u-antialiased {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* 1 */ }
+
+/**
+ * 雅黑
+ * 对于西文，OS X使用"Helvetica Neue", Helvetica； Windows使用Arial；
+ */
+.u-heiti {
+  font-family: "Helvetica Neue", Helvetica, Arial, "PingFang sc", Lantinghei SC, "Microsoft YaHei", "Hiragino Sans GB", "Microsoft Sans Serif", "Wenquanyi Micro Hei", "ST Heiti", SimHei, sans-serif; }
+
+/**
+ * 宋体
+ * 对于西文，使用Georgia。使用宋体时字号不宜超过14px，并且不宜设置字体平滑
+ */
+.u-songti {
+  font-family: Georgia, "Songti SC", STSong, SimSun, "TW\-Sung", "WenQuanYi Bitmap Song", "AR PL UMing CN", "AR PL UMing HK", "AR PL UMing TW", "AR PL UMing TW MBE", serif; }
+
+/**
+ * 楷体
+ * 对于西文，使用Georgia
+ */
+.u-kaiti {
+  font-family: Baskerville, Georgia, "Liberation Serif", "Kaiti SC", STKaiti, "AR PL UKai CN", "AR PL UKai HK", "AR PL UKai TW", "AR PL UKai TW MBE", "AR PL KaitiM GB", KaiTi, KaiTi_GB2312, "TW\-Kai", serif; }
+
+/* 等宽字体 */
+.u-monospace {
+  font-family: Monaco, Menlo, Consolas, "Courier New", monospace; }
+
+/* ==========================================================================
+   通用组件@component
+   @参考: Neat.css | MIT License
+   ========================================================================== */
+/**
+ * @component: 消除空隙的inline-block
+ * @usage: 结构如下
+    <div class="u-inb">
+        <span class="u-inb__item">xxx</span>
+        <span class="u-inb__item">xxx</span>
+        <span class="u-inb__item">xxx</span>
+        <span class="u-inb__item">xxx</span>
+    </div>
+ * 1. 针对所有现代浏览器
+ * 2. fixed IE6/7 1px
+ * 3. fixed Safari 5- 等不支持 font-size: 0 的浏览器
+ * 4. 字号大小
+ */
+.u-inb {
+  font-size: 0;
+  /* 1 */
+  *word-spacing: -1px;
+  /* 2 */ }
+
+@media (-webkit-min-device-pixel-ratio: 0) {
+  .u-inb {
+    letter-spacing: -5px;
+    /* 3 */ } }
+
+.u-inb__item {
+  display: inline-block;
+  vertical-align: top;
+  *vertical-align: auto;
+  *display: inline;
+  zoom: 1;
+  font-size: 12px;
+  /* 4 */
+  letter-spacing: normal;
+  word-spacing: normal;
+  line-height: initial; }
+
+/**
+ * @component: 未知高度垂直居中组件，支持图片，单行或多行文字，以及图文混排
+ * @usage: 结构如下
+    <div class="u-center">
+        <div class="u-center__inner">
+            <p>xxxxxxx</p>
+            <p>xxxxxxx</p>
+        </div>
+        <span class="u-center__hack"></span>
+    </div>
+ * 1. 继承父级高度
+ * 2. 保证连续字符也能居中
+ * 3. 防止设置边距导致居中失效
+ * 4. 保证连续字符换行
+ * 5. 保证文字垂直居中
+ * 6. 使用空标签生成一个高度100%的参照元素
+ */
+.u-center {
+  height: 100%;
+  /* 1 */
+  text-align: center;
+  font-size: 0;
+  *word-spacing: -1px; }
+
+@media (-webkit-min-device-pixel-ratio: 0) {
+  .u-center {
+    letter-spacing: -5px; } }
+
+.u-center__inner {
+  width: 100%;
+  /* 2 */
+  padding: 0 !important;
+  /* 3 */
+  margin: 0 !important;
+  font-size: 12px;
+  letter-spacing: normal;
+  word-spacing: normal;
+  white-space: normal;
+  /* 4 */
+  word-wrap: break-word; }
+
+.u-center__inner,
+.u-center__hack {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  vertical-align: middle;
+  /* 5 */ }
+
+/* 6 */
+.u-center__hack {
+  width: 0;
+  height: 100%; }
+
+/**
+ * @component: 自适应两端对齐组件
+ * @update: 2016-02-03 14:43:18
+ * @usage: 结构如下
+    <div class="u-justify">
+        <span class="u-justify__item">欢</span>
+        <span class="u-justify__item">聚</span>
+        <span class="u-justify__item">时</span>
+        <span class="u-justify__item">代</span>
+    </div>
+    1. 针对所有现代浏览器
+    2. fixed IE6/7 1px
+    3. for IE 6-7
+    4. IE 6-7 触发 hasLayout 使一行也能两端对齐
+    5. IE 8+
+    6. 不支持 text-align-last 的浏览器用伪元素模拟
+    7. margin-left:100% 仅 WebKit 支持
+    8. fixed Safari 5- 等不支持 font-size: 0 的浏览器
+    9. 子元素取消两端对齐
+    10. 字号大小
+ */
+.u-justify {
+  font-size: 0;
+  /* 1 */
+  *word-spacing: -1px;
+  /* 2 */
+  text-align: justify;
+  text-justify: inter-ideograph;
+  /* 3 */
+  *zoom: 1;
+  /* 4 */
+  line-height: initial;
+  -moz-text-align-last: justify;
+  -webkit-text-align-last: justify;
+  text-align-last: justify;
+  /* 5 */
+  /* 6 */ }
+  .u-justify:after {
+    content: "";
+    display: inline-block;
+    width: 100%;
+    /* 7 */ }
+
+@media (-webkit-min-device-pixel-ratio: 0) {
+  .u-justify {
+    letter-spacing: -5px;
+    /* 8 */ } }
+
+/* 9 */
+.u-justify__item {
+  display: inline-block;
+  vertical-align: top;
+  *vertical-align: auto;
+  *display: inline;
+  zoom: 1;
+  font-size: 12px;
+  /* 10 */
+  letter-spacing: normal;
+  word-spacing: normal;
+  line-height: initial;
+  -moz-text-align-last: auto;
+  -webkit-text-align-last: auto;
+  text-align-last: auto;
+  text-justify: auto;
+  text-align: left; }
+
+/**
+ * @component: CSS三角形
+ */
+.u-arrow {
+  width: 0;
+  height: 0;
+  line-height: 0;
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: -2px;
+  *vertical-align: auto;
+  *display: inline;
+  zoom: 1;
+  border: 0 solid transparent;
+  border-width: 6px;
+  font-size: 0;
+  /* ◤左上角 */
+  /* ◥右上角 */
+  /* ◣左下角 */
+  /* ◢右下角 */ }
+  .u-arrow.ext-top {
+    border-bottom-style: solid;
+    border-bottom-color: #666; }
+  .u-arrow.ext-bottom {
+    border-top-style: solid;
+    border-top-color: #666; }
+  .u-arrow.ext-left {
+    border-right-style: solid;
+    border-right-color: #666; }
+  .u-arrow.ext-right {
+    border-left-style: solid;
+    border-left-color: #666; }
+  .u-arrow.ext-leftTop {
+    border-top-style: solid;
+    border-top-color: #666;
+    border-left-width: 0 !important; }
+  .u-arrow.ext-rightTop {
+    border-top-style: solid;
+    border-top-color: #666;
+    border-right-width: 0 !important; }
+  .u-arrow.ext-leftBtm {
+    border-bottom-style: solid;
+    border-bottom-color: #666;
+    border-left-width: 0 !important; }
+  .u-arrow.ext-rightBtm {
+    border-bottom-style: solid;
+    border-bottom-color: #666;
+    border-right-width: 0 !important; }
+
+/*
+ * @file: 打印样式
+ * @update: 2015-06-03 16:49:29
+ * @source: https://github.com/h5bp/html5-boilerplate/blob/master/css/main.css
+ */
+@media print, (min-resolution: 1.25dppx), (min-resolution: 120dpi) {
+  /* Style adjustments for high resolution devices */ }
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   http://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+@media print {
+  *,
+  *:before,
+  *:after {
+    background: transparent !important;
+    color: #000 !important;
+    /* Black prints faster: http://www.sanbeiji.com/archives/953 */
+    -webkit-box-shadow: none !important;
+       -moz-box-shadow: none !important;
+            box-shadow: none !important;
+    text-shadow: none !important; }
+  a,
+  a:visited {
+    text-decoration: underline; }
+  a[href]:after {
+    content: " (" attr(href) ")"; }
+  abbr[title]:after {
+    content: " (" attr(title) ")"; }
+  /*
+     * Don't show links that are fragment identifiers,
+     * or use the `javascript:` pseudo protocol
+     */
+  a[href^="#"]:after,
+  a[href^="javascript:"]:after {
+    content: ""; }
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid; }
+  /*
+     * Printing Tables:
+     * http://css-discuss.incutio.com/wiki/Printing_Tables
+     */
+  thead {
+    display: table-header-group; }
+  tr,
+  img {
+    page-break-inside: avoid; }
+  img {
+    max-width: 100% !important; }
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3; }
+  h2,
+  h3 {
+    page-break-after: avoid; }
+  .u-printHide {
+    display: none !important; } }
+
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImluZGV4LmNzcyIsIi4uL3Nhc3MvaW5kZXguc2NzcyIsIi4uL3Nhc3MvYmFzZS9fYmFzZS5zY3NzIiwiLi4vc2Fzcy9iYXNlL192YXJpYWJsZS5zY3NzIiwiLi4vc2Fzcy9iYXNlL19taXhpbnMuc2NzcyIsIi4uL3Nhc3MvYmFzZS9fbm9ybWFsaXplLnNjc3MiLCIuLi9zYXNzL2Jhc2UvX3Jlc2V0LnNjc3MiLCIuLi9zYXNzL2Jhc2UvX3V0aWxpdHkuc2NzcyIsIi4uL3Nhc3MvYmFzZS9fcHJpbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSxrQkFBaUI7QUNDakI7Ozs7SUFJRztBQ0pIOzs7SUFHRztBQ0ZIOzs7SUFHRztBQUVILFdBQUE7QUFFQTs7Ozs7OztJQU9HO0FBTUgsV0FBQTtBQ3RCQTs7OztHQUlFO0FBRUY7O2lGQUVnRjtBQUVoRjs7OztJQUlHO0FBV0g7OztJQUdHO0FBU0g7O2lGQUVnRjtBQUVoRjs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O0lBdUNHO0FBc0RILGdCQUFBO0FBTUE7Ozs7SUFJRztBQWFILGtCQUFBO0FBY0E7Ozs7SUFJRztBQVFIOzs7SUFHRztBQVdIOzs7SUFHRztBQVlIOzs7SUFHRztBQWlCSDs7O0lBR0c7QUFhSDs7O0lBR0c7QUFPSCxvQkFBQTtBQU9BLHlDQUFBO0FBWUE7Ozs7O0lBS0c7QUFNSDs7O0lBR0c7QUFPSDs7Ozs7O0lBTUc7QUFhSDs7Ozs7SUFLRztBQXlCSDs7OztJQUlHO0FBU0gsa0JBQUE7QUFLQTs7Ozs7SUFLRztBQXNCSDs7Ozs7OztJQU9HO0FBcUNIOztpRkFFZ0Y7QUFDaEY7Ozs7O0lBS0c7QUFFSCxpQ0FBZ0M7QUF5Q2hDLCtCQUE4QjtBQXlDOUIsa0NBQWlDO0FBc0JqQyxrQ0FBaUM7QUFzQmpDLGtDQUFpQztBQXFCakMsbUNBQWtDO0FBbUJsQyxvQ0FBbUM7QUFxQm5DLHNDQUFxQztBQ3puQnJDLDREQUEyRDtBQUUzRDs7aUZBRWdGO0FBRWhGOztJ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 */
