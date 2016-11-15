@@ -1,8 +1,8 @@
-## jparallax 笔记
+## parallax 笔记
 ### 写在前面
 之前用的这个插件的时候就发现有坑的了，不过那个时候不知道怎么的就解决了，现在要用这个插件的时候就真的是坑了下自己,所以过来总结一下
 
-插件地址[jparallax](https://github.com/stephband/jparallax)
+插件地址[jparallax](https://github.com/wagerfield/parallax)
 
 ### 坑的方式
 ###  1.element必须有高度
