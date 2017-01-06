@@ -9,3 +9,5 @@
 1. [jq isEmptyObject问题](https://github.com/semi-xi/blog/issues/5)
 1. [flash的一些问题] (https://github.com/semi-xi/blog/issues/6)
 1. [new Date在ie的bug](https://github.com/semi-xi/blog/tree/master/newDate)
+1. [移动端播放音频一些坑](https://github.com/semi-xi/blog/issues/9)
+1. [flex-wrap不兼容解决方案](https://github.com/semi-xi/blog/issues/10)
