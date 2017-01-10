@@ -32,19 +32,19 @@
         oBody.innerHTML = time + '<br>' + time2 + '<br>' + time3 + '<br>' + time4 + '<br>' + time4.toUTCString() + '<br>' + time5;
 </script>
 ```
-但是出来的结果是这样的
-IE 9
+但是出来的结果是这样的  
+IE 9  
+![](https://github.com/semi-xi/blog/raw/master/newDate/src/img/ie.png)  
+  
+FF 48  
+  
+![](https://github.com/semi-xi/blog/raw/master/newDate/src/img/ie.png)    
+  
+Chrome  
+
 ![](https://github.com/semi-xi/blog/raw/master/newDate/src/img/ie.png)  
 
-FF 48
-
-![](https://github.com/semi-xi/blog/raw/master/newDate/src/img/ie.png)  
-
-Chrome
-
-![](https://github.com/semi-xi/blog/raw/master/newDate/src/img/ie.png)  
-
-** 两个设置方法出来的值不一样 **
+**两个设置方法出来的值不一样**
 
 是不是很吃惊。。
 `new Date("yyyy-mth-ddThh:mm:ss")`跟`new Date("yyyy,mth,dd,hh,mm,ss")`创建出来的东西在FF跟ie/chrom表现是不一样的，而且从时间上来说，`new Date("yyyy-mth-ddThh:mm:ss")`会跟`toUTCString()`之后的时间不一样，唯一相同的都是8小时。
@@ -52,7 +52,7 @@ Chrome
 在这里之中，我感觉上FF上是没错的，反而是IE跟Chrome是错误的。判断的逻辑是，如果我这里是正确时间，那么我toUTC之后的应该会减8个小时(因为我们这里是东八区，世界时间在0时区)，就这样子算差值的话就得出是了。  
 当然了，这只是我的判断，应该是跟参数的`T`有关系
 
-** 回到主题 ie跟FF/Chrome 的差异 **
+**回到主题 ie跟FF/Chrome 的差异**
 
 之前在查阅资料的时候，有些人给出的定义时间是这样`new Date('09 01, 2016 10:20')` 但是从结果来看，这个在ie里面是直接跪了的  
 对于大部分的习惯定义时间 `new Date('09 01, 2016 10:20')` 这样的定义方法在ie来说也是不行的。
