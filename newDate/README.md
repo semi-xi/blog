@@ -38,11 +38,11 @@ IE 9
   
 FF 48  
   
-![](https://github.com/semi-xi/blog/raw/master/newDate/src/img/ie.png)    
+![](https://github.com/semi-xi/blog/raw/master/newDate/src/img/ff.png)    
   
 Chrome  
 
-![](https://github.com/semi-xi/blog/raw/master/newDate/src/img/ie.png)  
+![](https://github.com/semi-xi/blog/raw/master/newDate/src/img/chrome.png)  
 
 **两个设置方法出来的值不一样**
 
