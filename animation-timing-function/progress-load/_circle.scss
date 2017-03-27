@@ -1,0 +1,87 @@
+$size: 130px; // 圆环宽高
+$borderWidth: ($size / 8); // 轨道宽度
+$fontColor: #f8d5d5; // 文字颜色
+
+$precent: 80; // 进度百分比
+$duration: 6s; // 动画时长
+
+@mixin positioning($pos: absolute) {
+    position: $pos;
+    top: 0;
+    left: 0;
+    height: $size;
+    width: $size;
+}
+
+.progress-ring {
+    @include positioning(relative);
+    div {
+        @include positioning;
+        border: $borderWidth solid #f8d5d5;
+        border-radius: 50%;
+        box-sizing: border-box;
+    }
+    .progress-left, .progress-right, .progress-cover {
+        clip: rect(0 ($size / 2) $size 0); /* [0 | <width/2> | <width> | 0] */
+    }
+    .progress-right {
+        transform: rotate(180deg); /* 旋转到右边 */
+    }
+    .progress-left, .progress-right {
+        border-color: #ff4242;
+    }
+}
+
+
+
+.progress-right {
+    opacity: 0;
+}
+@keyframes left {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(3.6deg * $precent);
+    }
+}
+
+.progress-left {
+    // transform: rotate(3.6deg * $precent);
+    // transition: transform $duration linear;
+    // animation: left $duration linear;
+    // animation-fill-mode: both;
+    animation-duration: 6s;
+    animation-fill-mode: both;
+    animation-timing-function: linear;
+    animation-name: left;
+}
+
+@keyframes toggle {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes toggle2 {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+.progress-right {
+    animation: toggle ($duration * 50 / $precent) step-end;
+    animation-fill-mode: forwards;
+}
+
+.progress-cover {
+    animation: toggle2 ($duration * 50 / $precent) step-end;
+    animation-fill-mode: forwards;
+}
