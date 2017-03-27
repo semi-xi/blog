@@ -142,6 +142,6 @@ y轴代表的是关键帧之间的属性变化
 
 ## 参考资料
 
-1. [深入理解CSS3 Animation 帧动画](http://www.cnblogs.com/aaronjs/p/4642015.html 深入理解CSS3Animation帧动画)
-1. [How to Use steps() in CSS Animations](http://designmodo.com/steps-css-animations/ '')
-1. [w3c transition-timing-function](https://www.w3.org/TR/2012/WD-css3-transitions-20120403/#transition-timing-function-property '')
+1. [深入理解CSS3 Animation 帧动画](http://www.cnblogs.com/aaronjs/p/4642015.html)
+1. [How to Use steps() in CSS Animations](http://designmodo.com/steps-css-animations/)
+1. [w3c transition-timing-function](https://www.w3.org/TR/2012/WD-css3-transitions-20120403/#transition-timing-function-property)
